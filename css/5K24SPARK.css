@@ -6,25 +6,25 @@
 
 /* Colors */
 :root {
-  --primary-color: DodgerBlue; /* Main background and banner color */
-  --secondary-color: #ffc107; /* Heading and important elements color */
-  --tertiary-color: #007bff; /* Border and button color */
-  --accent-color: #333; /* Text color */
-  --highlight-color: #ffc107; /* Highlighted text color */
+  --primary-color: #f5f5f5; /* Main background color (Soft White) */
+  --secondary-color: #2980b9; /* Heading and important elements color (Blue) */
+  --accent-color: #f39c12; /* Accent color (Yellow) */
+  --text-color: #333; /* Text color (Dark Gray) */
+  --table-header-color: #2980b9; /* Table header color (Blue) */
 }
 
 /* Base styles */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif; /* Use Roboto font family */
   background-color: var(--primary-color); /* Use primary color as background */
-  color: var(--accent-color); /* Set text color */
+  color: var(--text-color); /* Set text color */
   padding: 20px;
 }
 
 /* Centered heading */
 h2 {
   text-align: center;
-  color: var(--secondary-color); /* Use secondary color for headings */
+  color: var(--secondary-color); /* Use accent color for headings */
 }
 
 /* QR code container */
@@ -36,49 +36,58 @@ h2 {
 
 /* QR code */
 #qrcode {
-  border: 5px dashed var(--highlight-color); /* Use tertiary color for border */
+  border: 5px dashed var(--accent-color); /* Use accent color for border */
   padding: 5px;
 }
 
 /* Banner */
 .banner {
-  background-color: var(--primary-color); /* Use primary color for banner background */
-  color: white; /* White text color */
+  background-color: var(--secondary-color); /* Use accent color for banner background */
+  color: var(--primary-color); /* Text color */
   text-align: center;
   padding: 20px;
+  border-radius: 8px; /* Rounded corners for the banner */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
 .banner h1 {
   margin: 0;
   font-size: 32px;
+  text-transform: uppercase; /* Convert heading text to uppercase for emphasis */
 }
 
-/* Table */
+/* Table container */
 .table-container {
-  margin-bottom: 20px;
+  max-width: 500px; /* Example maximum width, adjust as needed */
   overflow-x: auto;
+  margin: 0 auto; /* Center the container horizontally */
+  border-radius: 8px; /* Rounded corners for the table container */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
+/* Adjust the table width as needed */
 table {
   width: 100%;
   border-collapse: collapse;
   background-color: #fff;
   table-layout: fixed;
+  border-radius: 8px; /* Rounded corners for the table */
 }
 
 th, td {
-  text-align: left;
+  text-align: center; /* Center content in table cells */
   padding: 8px;
   border-bottom: 1px solid #ddd;
+  color: #fff; /* White text color for table headings */
 }
+
 
 tr {
   height: 50px;
 }
 
 th {
-  background-color: var(--tertiary-color); /* Use tertiary color for table headers */
-  color: white; /* White text color */
+  background-color: var(--table-header-color); /* Use table header color for table headers */
 }
 
 table:empty {
@@ -97,37 +106,18 @@ input[type="text"] {
   box-sizing: border-box;
 }
 
-.required{
-  font-size: 2em;
+.required {
+  font-size: 1.2em;
   vertical-align: middle;
-  color: #ffc107;
+  color: var(--accent-color); /* Use accent color for required text */
 }
 
-select{
-  width: 10em
+select {
+  width: 10em;
 }
 
-/* Adjust the minimum width of the Select2 dropdown and create space for the arrow */
-.select2-container--default .select2-selection--single {
-  min-width: 10em; /* Adjust the width as needed */
-  padding-right: 20px !important; /* Adjust the padding to create space for the arrow */
-}
-
-/* Adjust the font size of the text inside the Select2 dropdown */
-.select2-container--default .select2-selection--single .select2-selection__rendered {
-  font-size: 1em; /* Adjust the font size as needed */
-}
-
-/* Adjust the width of the dropdown list */
-.select2-dropdown {
-  min-width: 6em; /* Adjust the width as needed */
-  font-size: 1em;
+html {
   overflow-x: hidden;
-}
-
-.select2-container--default .select2-selection--single .select2-selection__arrow {
-  left: auto !important;
-  right: 0;
 }
 
 /* Checkboxes */
@@ -136,10 +126,12 @@ select{
   font-size: 1em;
   display: flex;
   flex-direction: column;
+  align-items: center; /* Center items horizontally */
 }
 
 .checkboxes-group-container {
   display: flex;
+  justify-content: center; /* Center items vertically */
   flex-direction: row;
   gap: 2em;
 }
@@ -152,88 +144,129 @@ input[type="checkbox"] {
 
 .checkbox-container label {
   margin-top: 5px;
+  color: #333;
 }
 
-/* Buttons */
+/* Button container */
 .button-container {
+  overflow-x: hidden;
   display: flex;
   justify-content: center;
+  margin: 20px auto; /* Adjusted margin to lower the container */
   gap: 10px;
+  width: calc(100% - 0px); /* Adjust as needed */
+  max-width: 500px; /* Example maximum width, adjust as needed */
 }
 
 button {
-  background-color: var(--tertiary-color); /* Use tertiary color for buttons */
-  color: white; /* White text color */
-  padding: 10px 20px;
+  flex: 1;
+  background-color: var(--secondary-color); /* Use accent color for buttons */
+  color: var(--text-color); /* Text color */
+  padding: 12px 20px; /* Adjusted padding */
   margin: 0.2em;
+  font-size: 1em;
+  color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #2e94d8; /* Lighter shade of accent color for hover effect */
+}
+
+#nextButton {
+  background-color: #3aab6b; /* Nice green */
+  color: var(--text-color); /* Text color */
+  padding: 12px 20px; /* Adjusted padding */
+  margin: 0.2em;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+#nextButton:hover {
+  background-color: #45ce81; /* Lighter shade of green for hover effect */
+}
+
+#prevButton {
+  background-color: #e74c3c; /* Good red */
+  color: var(--text-color); /* Text color */
+  padding: 12px 20px; /* Adjusted padding */
+  margin: 0.2em;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+#prevButton:hover {
+  background-color: #c0392b; /* Lighter shade of red for hover effect */
 }
 
 #clearButton {
-  background-color: var(--secondary-color); /* Use secondary color for clear button */
-  border-color: var(--secondary-color);
+  background-color: var(--accent-color); /* Light red */
+  color: var(--text-color); /* Text color */
+  padding: 12px 20px; /* Adjusted padding */
+  margin: 0.2em;
+  border: none;
+  font-size: 1em;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
 #clearButton:hover {
-  background-color: #e0a800;
+  background-color: #efc074; /* Lighter shade of red for hover effect */
 }
 
-.nav-item.active {
-  background-color: var(--secondary-color);
-}
-
-a:hover, button:hover {
-  color: var(--secondary-color);
-}
-
-.button-container button {
-  background-color: var(--secondary-color);
-  color: var(--accent-color); /* Use accent color for text */
-}
-
-.button-container button:hover {
-  background-color: #e0a800;
-}
-
-.important-text, .highlight {
-  color: var(--secondary-color);
-}
-
-/* Responsive adjustments */
 @media screen and (max-width: 768px) {
   body {
     font-size: 1em;
   }
+  
+  
+  /* Prevent horizontal scrolling on the table container */
+  .table-container {
+    overflow-x: hidden; /* Disable horizontal scrolling */
+    max-width: 100%; /* Limit the maximum width of the container to prevent excessive scrolling */
+    margin-left: auto; /* Center the table horizontally */
+    margin-right: auto;
+  }
 
-  html, body {
-    overflow-x: hidden;
+  /* Adjust the width of the Select2 dropdown list */
+  .select2-container--default .select2-dropdown {
+    font-size: 1.2em;
+  }
+
+  /* Adjust the minimum width of the Select2 dropdown and create space for the arrow */
+  .select2-container--default .select2-selection--single {
+    min-width: unset; /* Remove minimum width */
+    max-width: calc(100% - 60px); /* Limit the width to 100% of the screen width minus padding */
+    padding-right: 20px !important; /* Adjust the padding to create space for the arrow */
+  }
+
+  /* Adjust the font size of the text inside the Select2 dropdown */
+  .select2-container--default .select2-selection--single .select2-selection__rendered {
+    font-size: 1.2em; /* Adjust the font size as needed */
   }
   
-  table {
-    table-layout: fixed; /* Fixes column widths, making the table more manageable on small screens */
-  }
-
-  th, td {
-    white-space: nowrap; /* Ensures text in cells does not wrap, making it easier to read */
-  }
-
-  .select2-container--default .select2-selection--single .select2-selection__rendered {
-    font-size: 1.5em; /* Adjust the font size as needed */
-  }
-
-  /* Adjust the width of the dropdown list */
-  .select2-dropdown {
-    font-size: 1.5em;
+  /* Position the arrow to the right */
+  .select2-container--default .select2-selection--single .select2-selection__arrow {
+    left: auto !important;
+    right: 4em;
   }
 
   #nextButton, #prevButton, #clearButton {
-    scale: 1.5;
-    margin: 2em;
+    flex: 0 0 45%; /* Set fixed width for buttons */
+  }
+
+  input[type="text"] {
+    width: 2em;
   }
 }

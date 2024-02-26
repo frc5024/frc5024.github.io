@@ -91,16 +91,31 @@ var jsonData = {
                 },
                 {
                     "name": "Human player high note?",
-                    "type": "checkbox",
-                    "id":"4",
-                    "required": "yes"
-                },
+                    "type": "field"
+                }
+            ]
+        },
+        {
+            "name": "Other",
+            "fields": [
                 {
-                    "name": "Robot Immobilized",
+                    "name": "Robot Died",
                     "type": "checkbox",
                     "id":"5",
                     "required": "yes"
-                }
+                },
+                {
+                    "name": "Robot Tipped",
+                    "type": "checkbox",
+                    "id":"6",
+                    "required": "yes"
+                },
+                {
+                    "name": "Did Not Play",
+                    "type": "checkbox",
+                    "id":"7",
+                    "required": "yes"
+                },
             ]
         },
         {

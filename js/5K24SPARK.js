@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         const checkboxesGroupContainer = document.createElement("div");
                         checkboxesGroupContainer.className = "checkboxes-group-container";
 
-                        const labels = ["True", "False"];
+                        const labels = ["Yes", "No"];
                         labels.forEach(label => {
                             // Create individual container for each checkbox and its label
                             const checkboxContainer = document.createElement("div");
@@ -215,7 +215,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     } else if (object.type === "field" && !$("#match\\#").val()) {
                         alert("Please fill the required field before moving to the next page.");
                         return false;
-                    } else if (object.type === "checkbox" && !document.getElementById(`checkboxTrue${object.id}`).checked && !document.getElementById(`checkboxFalse${object.id}`).checked) {
+                    } else if (object.type === "checkbox" && !document.getElementById(`checkboxYes${object.id}`).checked && !document.getElementById(`checkboxNo${object.id}`).checked) {
                         alert("Please fill the required field before moving to the next page.");
                         return false;
                     }
@@ -296,11 +296,10 @@ document.addEventListener("DOMContentLoaded", function () {
             collectedValues = "";
             const inputs = document.querySelectorAll("input[type=text], input[type=checkbox], input[type=radio]:checked, select");
             inputs.forEach(input => {
-                // If the input is a checkbox and the input is checked put "true" for true and "false" for false
+                // If the input is a checkbox and the input is checked put "Yes" for true and "No" for false
                 if (input.type === "checkbox" && input.checked) {
-                    console.log("YESSSSSIRIRIRIRIIRIR")
                     const checkboxId = input.id;
-                    collectedValues += checkboxId.includes("False") ? "false, " : "true, ";
+                    collectedValues += checkboxId.includes("No") ? "No, " : "Yes, ";
                 // Put value from select or text
                 } else if ((input.type === "text" || input.tagName.toLowerCase() === "select") && input.value.trim() !== "") {
                     collectedValues += input.value + ", ";
