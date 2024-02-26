@@ -238,7 +238,6 @@ button:hover {
     width: 100%;
   }
   
-  
   /* Prevent horizontal scrolling on the table container */
   .table-container {
     overflow-x: hidden; /* Disable horizontal scrolling */
@@ -255,8 +254,7 @@ button:hover {
   /* Adjust the minimum width of the Select2 dropdown and create space for the arrow */
   .select2-container--default .select2-selection--single {
     min-width: unset; /* Remove minimum width */
-    max-width: calc(100% - 60px); /* Limit the width to 100% of the screen width minus padding */
-    padding-right: 20px !important; /* Adjust the padding to create space for the arrow */
+    max-width: calc(100%); /* Limit the width to 100% of the screen width minus padding */
   }
 
   /* Adjust the font size of the text inside the Select2 dropdown */
@@ -264,18 +262,13 @@ button:hover {
     font-size: 1.2em; /* Adjust the font size as needed */
   }
   
-  /* Position the arrow to the right */
-  .select2-container--default .select2-selection--single .select2-selection__arrow {
-    left: auto !important;
-    right: 4em;
-  }
 
   #nextButton, #prevButton, #clearButton {
     flex: 0 0 45%; /* Set fixed width for buttons */
   }
 
   button {
-    padding: 10px 17px; /* Adjusted padding */
+    padding: 10px 15px; /* Adjusted padding */
   }
 
   input[type="text"] {
