@@ -21,6 +21,10 @@ body {
   padding: 20px;
 }
 
+* {
+  touch-action: manipulation;
+}
+
 /* Centered heading */
 h2 {
   text-align: center;
