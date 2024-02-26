@@ -1,0 +1,232 @@
+/* 
+    Author: Josh Bakelaar, Isabella Lapore
+    Created Date: 2/25/2024
+    Modified Date: 2/25/2024
+*/
+
+/* Colors */
+:root {
+  --primary-color: DodgerBlue; /* Main background and banner color */
+  --secondary-color: #ffc107; /* Heading and important elements color */
+  --tertiary-color: #007bff; /* Border and button color */
+  --accent-color: #333; /* Text color */
+  --highlight-color: #ffc107; /* Highlighted text color */
+}
+
+/* Base styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--primary-color); /* Use primary color as background */
+  color: var(--accent-color); /* Set text color */
+  padding: 20px;
+}
+
+/* Centered heading */
+h2 {
+  text-align: center;
+  color: var(--secondary-color); /* Use secondary color for headings */
+}
+
+/* QR code container */
+#qrcode-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+/* QR code */
+#qrcode {
+  border: 5px dashed var(--highlight-color); /* Use tertiary color for border */
+  padding: 5px;
+}
+
+/* Banner */
+.banner {
+  background-color: var(--primary-color); /* Use primary color for banner background */
+  color: white; /* White text color */
+  text-align: center;
+  padding: 20px;
+}
+
+.banner h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+/* Table */
+.table-container {
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  table-layout: fixed;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+tr {
+  height: 50px;
+}
+
+th {
+  background-color: var(--tertiary-color); /* Use tertiary color for table headers */
+  color: white; /* White text color */
+}
+
+table:empty {
+  display: none;
+}
+
+/* Inputs */
+select,
+input[type="text"] {
+  height: 40px;
+  width: 3em;
+  font-size: 1.2em;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+select{
+  width: 10em
+}
+
+/* Adjust the minimum width of the Select2 dropdown and create space for the arrow */
+.select2-container--default .select2-selection--single {
+  min-width: 10em; /* Adjust the width as needed */
+  padding-right: 20px !important; /* Adjust the padding to create space for the arrow */
+}
+
+/* Adjust the font size of the text inside the Select2 dropdown */
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  font-size: 1em; /* Adjust the font size as needed */
+}
+
+/* Adjust the width of the dropdown list */
+.select2-dropdown {
+  min-width: 6em; /* Adjust the width as needed */
+  font-size: 1em;
+  overflow-x: hidden;
+}
+
+/* Adjust the position of the arrow */
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  left: 8em !important; /* Adjust the position of the arrow */
+}
+
+/* Checkboxes */
+.checkbox-container {
+  padding-top: 1em;
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.checkboxes-group-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+}
+
+input[type="checkbox"] {
+  margin-bottom: 5px;
+  transform: scale(2.5);
+  cursor: pointer;
+}
+
+.checkbox-container label {
+  margin-top: 5px;
+}
+
+/* Buttons */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+button {
+  background-color: var(--tertiary-color); /* Use tertiary color for buttons */
+  color: white; /* White text color */
+  padding: 10px 20px;
+  margin: 0.2em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#clearButton {
+  background-color: var(--secondary-color); /* Use secondary color for clear button */
+  border-color: var(--secondary-color);
+}
+
+#clearButton:hover {
+  background-color: #e0a800;
+}
+
+.nav-item.active {
+  background-color: var(--secondary-color);
+}
+
+a:hover, button:hover {
+  color: var(--secondary-color);
+}
+
+.button-container button {
+  background-color: var(--secondary-color);
+  color: var(--accent-color); /* Use accent color for text */
+}
+
+.button-container button:hover {
+  background-color: #e0a800;
+}
+
+.important-text, .highlight {
+  color: var(--secondary-color);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 1em;
+  }
+
+  html, body {
+    overflow-x: hidden;
+  }
+  
+  table {
+    table-layout: fixed; /* Fixes column widths, making the table more manageable on small screens */
+  }
+
+  th, td {
+    white-space: nowrap; /* Ensures text in cells does not wrap, making it easier to read */
+  }
+
+  .select2-container--default .select2-selection--single .select2-selection__rendered {
+    font-size: 1.5em; /* Adjust the font size as needed */
+  }
+
+  /* Adjust the width of the dropdown list */
+  .select2-dropdown {
+    font-size: 1.5em;
+  }
+
+  #nextButton, #prevButton, #clearButton {
+    scale: 1.5;
+    margin: 2em;
+  }
+}
