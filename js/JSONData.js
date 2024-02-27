@@ -16,7 +16,8 @@ var jsonData = {
                     "name": "Match #",
                     "type": "field",
                     "id": "match#",
-                    "required": "yes"
+                    "required": "yes",
+                    "buttons": "no"
                 },
                 {
                     "name": "Team",
@@ -40,13 +41,15 @@ var jsonData = {
                     "name": "Amp Scores",
                     "type": "field",
                     "required": "no",
-                    "id": "autoAmp"
+                    "id": "autoAmp",
+                    "buttons": "yes"
                 },
                 {
                     "name": "Speaker Scores",
                     "type": "field",
                     "required": "no",
-                    "id": "autoSpeaker"
+                    "id": "autoSpeaker",
+                    "buttons": "yes"
                 },
                 {
                     "name": "Left starting zone",
@@ -63,13 +66,15 @@ var jsonData = {
                     "name": "Amp Scores",
                     "type": "field",
                     "required": "no",
-                    "id": "teleAmp"
+                    "id": "teleAmp",
+                    "buttons": "yes"
                 },
                 {
                     "name": "Speaker Scores",
                     "type": "field",
                     "required": "no",
-                    "id": "teleSpeaker"
+                    "id": "teleSpeaker",
+                    "buttons": "yes"
                 },
                 {
                     "name": "Coopertition",
@@ -91,7 +96,8 @@ var jsonData = {
                 },
                 {
                     "name": "Human player high note?",
-                    "type": "field"
+                    "type": "field",
+                    "buttons": "yes"
                 }
             ]
         },

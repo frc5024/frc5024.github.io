@@ -66,11 +66,13 @@ document.addEventListener("DOMContentLoaded", function () {
                         const inputGroup = document.createElement("div");
                         inputGroup.classList.add("input-group"); 
 
-                        // Adds a minus button to the left hand side
-                        const minusButton = document.createElement("button");
-                        minusButton.textContent = "-";
-                        minusButton.addEventListener("click", () => decrementValue(object.id));
-                        inputGroup.appendChild(minusButton);
+                        if(object.buttons === "yes"){
+                            // Adds a minus button to the left hand side
+                            const minusButton = document.createElement("button");
+                            minusButton.textContent = "-";
+                            minusButton.addEventListener("click", () => decrementValue(object.id));
+                            inputGroup.appendChild(minusButton);
+                        }
 
                         // Add the text input
                         const input = document.createElement("input");
@@ -82,12 +84,14 @@ document.addEventListener("DOMContentLoaded", function () {
                         input.inputMode  = "tel"
                         inputGroup.appendChild(input);
 
-                        // Create the plus button on the right hand side
-                        const plusButton = document.createElement("button");
-                        plusButton.textContent = "+";
-                        plusButton.addEventListener("click", () => incrementValue(object.id));
-                        inputGroup.appendChild(plusButton);
-
+                        if(object.buttons === "yes"){
+                            // Create the plus button on the right hand side
+                            const plusButton = document.createElement("button");
+                            plusButton.textContent = "+";
+                            plusButton.addEventListener("click", () => incrementValue(object.id));
+                            inputGroup.appendChild(plusButton);
+                        }
+                        inputGroup.className = "fieldInput";
                         inputCell.appendChild(inputGroup);
                         break;
                     // If the object is a radio button create one
