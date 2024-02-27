@@ -37,12 +37,6 @@ var jsonData = {
             "name": "auto",
             "fields": [
                 {
-                    "name": "Left starting zone",
-                    "type": "checkbox",
-                    "id":"2",
-                    "required": "yes"
-                },
-                {
                     "name": "Amp Scores",
                     "type": "field",
                     "required": "no",
@@ -54,17 +48,17 @@ var jsonData = {
                     "required": "no",
                     "id": "autoSpeaker"
                 },
+                {
+                    "name": "Left starting zone",
+                    "type": "checkbox",
+                    "id":"2",
+                    "required": "yes"
+                },
             ]
         },
         {
             "name": "Tele-Op",
             "fields": [
-                {
-                    "name": "Coopertition",
-                    "type": "checkbox",
-                    "id":"3",
-                    "required": "yes"
-                },
                 {
                     "name": "Amp Scores",
                     "type": "field",
@@ -76,6 +70,12 @@ var jsonData = {
                     "type": "field",
                     "required": "no",
                     "id": "teleSpeaker"
+                },
+                {
+                    "name": "Coopertition",
+                    "type": "checkbox",
+                    "id":"3",
+                    "required": "yes"
                 },
             ]
         },
