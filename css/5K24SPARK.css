@@ -6,99 +6,81 @@
 
 /* Colors */
 :root {
-  --primary-color: #f5f5f5; /* Main background color (Soft White) */
-  --secondary-color: #2980b9; /* Heading and important elements color (Blue) */
-  --accent-color: #f39c12; /* Accent color (Yellow) */
-  --text-color: #333; /* Text color (Dark Gray) */
-  --table-header-color: #2980b9; /* Table header color (Blue) */
+  --primary-color: #f5f5f5;
+  --secondary-color: #2980b9;
+  --accent-color: #f39c12;
+  --text-color: #333;
+  --table-header-color: #2980b9;
 }
 
 /* Base styles */
 body {
-  font-family: 'Roboto', sans-serif; /* Use Roboto font family */
-  background-color: var(--primary-color); /* Use primary color as background */
-  color: var(--text-color); /* Set text color */
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--primary-color);
+  color: var(--text-color);
   padding: 20px;
 }
 
-* {
-  touch-action: manipulation;
+html {
+  overflow-x: hidden;
 }
 
 /* Centered heading */
 h2 {
   text-align: center;
-  color: var(--secondary-color); /* Use accent color for headings */
+  color: var(--secondary-color);
 }
 
 /* QR code container */
 #qrcode-container {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  justify-content: center;
+  align-items: center;
 }
 
 /* QR code */
 #qrcode {
-  border: 5px dashed var(--accent-color); /* Use accent color for border */
+  border: 5px dashed var(--accent-color);
   padding: 5px;
 }
 
 /* Banner */
 .banner {
-  background-color: var(--secondary-color); /* Use accent color for banner background */
-  color: var(--primary-color); /* Text color */
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
   text-align: center;
   padding: 20px;
-  border-radius: 8px; /* Rounded corners for the banner */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-}
-
-.banner h1 {
-  margin: 0;
-  font-size: 32px;
-  text-transform: uppercase; /* Convert heading text to uppercase for emphasis */
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Table container */
 .table-container {
-  max-width: 500px; /* Example maximum width, adjust as needed */
+  max-width: 500px;
   overflow-x: auto;
-  margin: 0 auto; /* Center the container horizontally */
-  border-radius: 8px; /* Rounded corners for the table container */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Adjust the table width as needed */
+/* Table */
 table {
   width: 100%;
   border-collapse: collapse;
   background-color: #fff;
   table-layout: fixed;
-  border-radius: 8px; /* Rounded corners for the table */
+  border-radius: 8px;
 }
 
-th, td {
-  text-align: center; /* Center content in table cells */
-  padding: 8px;
-  border-bottom: 1px solid #ddd;
-  color: #fff; /* White text color for table headings */
-}
-
-
-tr {
-  height: 50px;
-}
-
-th {
-  background-color: var(--table-header-color); /* Use table header color for table headers */
-}
-
-table:empty {
-  display: none;
+/* The * beside required tabs */
+.required {
+  font-size: 1.2em;
+  vertical-align: middle;
+  color: var(--accent-color);
 }
 
 /* Inputs */
+/* Select */
 select,
 input[type="text"] {
   height: 40px;
@@ -110,18 +92,8 @@ input[type="text"] {
   box-sizing: border-box;
 }
 
-.required {
-  font-size: 1.2em;
-  vertical-align: middle;
-  color: var(--accent-color); /* Use accent color for required text */
-}
-
 select {
   width: 10em;
-}
-
-html {
-  overflow-x: hidden;
 }
 
 /* Checkboxes */
@@ -130,12 +102,12 @@ html {
   font-size: 1em;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center items horizontally */
+  align-items: center;
 }
 
 .checkboxes-group-container {
   display: flex;
-  justify-content: center; /* Center items vertically */
+  justify-content: center;
   flex-direction: row;
   gap: 2em;
 }
@@ -156,79 +128,81 @@ input[type="checkbox"] {
   overflow-x: hidden;
   display: flex;
   justify-content: center;
-  margin: 20px auto; /* Adjusted margin to lower the container */
+  margin: 20px auto;
   gap: 10px;
-  width: calc(100% - 0px); /* Adjust as needed */
-  max-width: 500px; /* Example maximum width, adjust as needed */
+  width: calc(100% - 0px);
+  max-width: 500px;
 }
 
+/* Buttons */
 button {
   flex: 1;
-  background-color: var(--secondary-color); /* Use accent color for buttons */
-  color: var(--text-color); /* Text color */
-  padding: 12px 20px; /* Adjusted padding */
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  padding: 12px 20px;
   margin: 0.2em;
   font-size: 1em;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-  background-color: #2e94d8; /* Lighter shade of accent color for hover effect */
+  background-color: #2e94d8;
 }
 
 #nextButton {
-  background-color: #3aab6b; /* Nice green */
-  color: var(--text-color); /* Text color */
-  padding: 12px 20px; /* Adjusted padding */
+  background-color: #3aab6b;
+  color: var(--text-color);
+  padding: 12px 20px;
   margin: 0.2em;
   border: none;
   color: white;
   border-radius: 4px;
   cursor: pointer;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #nextButton:hover {
-  background-color: #45ce81; /* Lighter shade of green for hover effect */
+  background-color: #45ce81;
 }
 
 #prevButton {
-  background-color: #e74c3c; /* Good red */
-  color: var(--text-color); /* Text color */
-  padding: 12px 20px; /* Adjusted padding */
+  background-color: #e74c3c;
+  color: var(--text-color);
+  padding: 12px 20px;
   margin: 0.2em;
   border: none;
   border-radius: 4px;
   color: white;
   cursor: pointer;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #prevButton:hover {
-  background-color: #e37669; /* Lighter shade of red for hover effect */
+  background-color: #e37669;
 }
 
 #clearButton {
-  background-color: var(--accent-color); /* Light red */
-  color: var(--text-color); /* Text color */
-  padding: 12px 20px; /* Adjusted padding */
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  padding: 12px 20px;
   margin: 0.2em;
   border: none;
   font-size: 1em;
   color: white;
   border-radius: 4px;
   cursor: pointer;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #clearButton:hover {
-  background-color: #efc074; /* Lighter shade of red for hover effect */
+  background-color: #efc074;
 }
 
+/* For responsiveness */
 @media screen and (max-width: 768px) {
   body {
     font-size: 1em;
@@ -238,37 +212,33 @@ button:hover {
     width: 100%;
   }
   
-  /* Prevent horizontal scrolling on the table container */
   .table-container {
-    overflow-x: hidden; /* Disable horizontal scrolling */
-    max-width: 100%; /* Limit the maximum width of the container to prevent excessive scrolling */
-    margin-left: auto; /* Center the table horizontally */
+    overflow-x: hidden;
+    max-width: 100%;
+    margin-left: auto;
     margin-right: auto;
   }
 
-  /* Adjust the width of the Select2 dropdown list */
   .select2-container--default .select2-dropdown {
     font-size: 1.2em;
   }
 
-  /* Adjust the minimum width of the Select2 dropdown and create space for the arrow */
   .select2-container--default .select2-selection--single {
-    min-width: unset; /* Remove minimum width */
-    max-width: calc(100%); /* Limit the width to 100% of the screen width minus padding */
+    min-width: unset;
+    max-width: calc(100%);
   }
 
-  /* Adjust the font size of the text inside the Select2 dropdown */
   .select2-container--default .select2-selection--single .select2-selection__rendered {
-    font-size: 1.2em; /* Adjust the font size as needed */
+    font-size: 1.2em;
   }
   
 
   #nextButton, #prevButton, #clearButton {
-    flex: 0 0 45%; /* Set fixed width for buttons */
+    flex: 0 0 45%;
   }
 
   button {
-    padding: 10px 15px; /* Adjusted padding */
+    padding: 10px 15px;
   }
 
   input[type="text"] {
