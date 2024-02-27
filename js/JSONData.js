@@ -95,8 +95,15 @@ var jsonData = {
                     "file": "assets/endgame.txt"
                 },
                 {
+                    "name": "Trap Scores",
+                    "type": "field",
+                    "id": "trapScore",
+                    "buttons": "yes"
+                },
+                {
                     "name": "Human player high note?",
                     "type": "field",
+                    "id": "highnoteScore",
                     "buttons": "yes"
                 }
             ]
