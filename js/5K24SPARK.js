@@ -180,7 +180,13 @@ document.addEventListener("DOMContentLoaded", function () {
             inputs.forEach(input => {
                 // Reset text inputs to "0"
                 if (input.type === 'text') {
-                    input.value = '0';
+                    if(input.id === 'match#'){
+                        const matchNum = +input.value;
+                        input.value = matchNum+1;
+                        
+                    }else{
+                        input.value = '0';
+                    }
                 // Uncheck radio buttons and checkboxes
                 } else if (input.type === 'checkbox' || input.type === 'radio') {
                     input.checked = false;
