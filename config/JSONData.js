@@ -10,7 +10,7 @@ var jsonData = {
                     "type": "select",
                     "required": "yes",
                     "id": "names",
-                    "file": "assets/names.txt"
+                    "file": "config/names.txt"
                 },
                 {
                     "name": "Match #",
@@ -24,7 +24,7 @@ var jsonData = {
                     "type": "select",
                     "required": "yes",
                     "id": "teams",
-                    "file": "assets/teams.txt"
+                    "file": "config/teams.txt"
                 },
                 {
                     "name": "Human Player at Amp?",
@@ -92,7 +92,7 @@ var jsonData = {
                     "type": "select",
                     "required": "yes",
                     "id": "endgame",
-                    "file": "assets/endgame.txt"
+                    "file": "config/endgame.txt"
                 },
                 {
                     "name": "Trap Scores",
