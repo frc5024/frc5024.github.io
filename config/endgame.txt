@@ -1,5 +1,5 @@
 Select
 Not in stage zone
 Park
-On stage
-Harmony
+On stage (Climb)
+Harmony (Double Climb)

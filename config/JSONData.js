@@ -26,12 +26,6 @@ var jsonData = {
                     "id": "teams",
                     "file": "config/teams.txt"
                 },
-                {
-                    "name": "Human Player at Amp?",
-                    "type": "checkbox",
-                    "id":"1",
-                    "required": "yes"
-                },  
             ]
         },
         {
@@ -76,12 +70,6 @@ var jsonData = {
                     "id": "teleSpeaker",
                     "buttons": "yes"
                 },
-                {
-                    "name": "Coopertition",
-                    "type": "checkbox",
-                    "id":"3",
-                    "required": "yes"
-                },
             ]
         },
         {
@@ -98,12 +86,6 @@ var jsonData = {
                     "name": "Trap Scores",
                     "type": "field",
                     "id": "trapScore",
-                    "buttons": "yes"
-                },
-                {
-                    "name": "Human player high note?",
-                    "type": "field",
-                    "id": "highnoteScore",
                     "buttons": "yes"
                 }
             ]
