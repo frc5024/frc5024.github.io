@@ -67,7 +67,7 @@ h2 {
   overflow-x: auto;
   margin: 0 auto; 
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adjusted box-shadow for consistency */
+  box-shadow: 12px 12px 12px rgb(225, 240, 12); /* Adjusted box-shadow for consistency */
 }
 
 /* Adjust the table width as needed */
@@ -156,6 +156,14 @@ input[type="checkbox"] {
   gap: 10px;
   width: 100%;
   max-width: 500px;
+}
+
+.select2-container{
+  width: 100% !important;
+}
+
+select{
+  width: 100%;
 }
 
 button {
