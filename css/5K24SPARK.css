@@ -1,21 +1,21 @@
 /* 
-    Author: Josh Bakelaar, Isabella Lapore
+    Author: Isabella Lapore, Josh Bakelaar
     Created Date: 2/25/2024
     Modified Date: 2/25/2024
 */
 
 /* Colors */
 :root {
-  --primary-color: #f5f5f5; 
-  --secondary-color: #2980b9; 
+  --primary-color: dodgerblue; 
+  --secondary-color: #075bec; 
   --accent-color: #f39c12; 
   --text-color: #333; 
-  --table-header-color: #2980b9;
+  --table-header-color: #075bec;
 }
 
 /* Base styles */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: Arial, Helvetica, sans-serif; 
   background-color: var(--primary-color);
   color: var(--text-color);
   padding: 20px;
@@ -28,7 +28,7 @@ body {
 /* Centered heading */
 h2 {
   text-align: center;
-  color: var(--secondary-color);
+  color: white;
 }
 
 /* QR code container */
@@ -47,11 +47,12 @@ h2 {
 /* Banner */
 .banner {
   background-color: var(--secondary-color);
-  color: var(--primary-color);
+  color: white;
   text-align: center;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-shadow: 2px 2px 5px rgb(192, 179, 33);
 }
 
 .banner h1 {
@@ -66,7 +67,7 @@ h2 {
   overflow-x: auto;
   margin: 0 auto; 
   border-radius: 8px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 6px rgb(225, 240, 12);
 }
 
 /* Adjust the table width as needed */
@@ -141,9 +142,9 @@ html {
 }
 
 input[type="checkbox"] {
-  margin-bottom: 5px;
-  transform: scale(2.5);
-  cursor: pointer;
+  font-size: 20px;
+  width: 2em;
+  height: 2em;
 }
 
 .checkbox-container label {
@@ -164,20 +165,21 @@ input[type="checkbox"] {
 
 button {
   flex: 1;
-  background-color: var(--secondary-color);
+  background-color:#2a57ea;
   color: var(--text-color);
   padding: 12px 20px;
   margin: 0.2em;
   font-size: 1em;
+  border: 4px double #e6de40;W
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 6px rgb(e6de40);
 }
 
 button:hover {
-  background-color: #2e94d8;
+  background-color: #91b9f4;
 }
 
 #nextButton {
