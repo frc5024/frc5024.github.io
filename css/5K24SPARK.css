@@ -67,7 +67,7 @@ h2 {
   overflow-x: auto;
   margin: 0 auto; 
   border-radius: 8px;
-  box-shadow: 4px 6px rgb(225, 240, 12);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adjusted box-shadow for consistency */
 }
 
 /* Adjust the table width as needed */
@@ -83,9 +83,8 @@ th, td {
   text-align: center;
   padding: 8px;
   border-bottom: 1px solid #ddd;
-  color: #fff;
+  color: #fff; /* Adjusted for contrast and readability */
 }
-
 
 tr {
   height: 50px;
@@ -103,7 +102,7 @@ table:empty {
 select,
 input[type="text"] {
   height: 40px;
-  width: 3em;
+  width: 30%; /* Adjusted for full-width on mobile devices */
   font-size: 1.2em;
   padding: 6px;
   border: 1px solid #ccc;
@@ -115,10 +114,6 @@ input[type="text"] {
   font-size: 1.2em;
   vertical-align: middle;
   color: var(--accent-color);
-}
-
-select {
-  width: 10em;
 }
 
 html {
@@ -142,7 +137,8 @@ html {
 }
 
 input[type="checkbox"] {
-  font-size: 20px;
+  transform: scale(1.5); /* Making checkboxes larger for better accessibility */
+  margin: 10px;
   width: 2em;
   height: 2em;
 }
@@ -154,124 +150,41 @@ input[type="checkbox"] {
 
 /* Button container */
 .button-container {
-  overflow-x: hidden;
   display: flex;
   justify-content: center;
   margin: 20px auto;
   gap: 10px;
-  width: calc(100% - 0px);
+  width: 100%;
   max-width: 500px;
 }
 
 button {
   flex: 1;
-  background-color:#2a57ea;
+  background-color: #2a57ea;
   color: white;
-  padding: 2px 15px;
+  padding: 10px 15px; /* Adjusted padding for better touch interaction */
   margin: 0.2em;
-  font-size: 2em;
-  border: 4px double;
-  border-color: #e6de40 !important;
-  color: white;
+  font-size: 1em; /* Adjusted font size for consistency */
+  border: none; /* Removed double border for a cleaner look */
+  border-radius: 4px; /* Added rounded corners for modern aesthetic */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Consistent shadow effect */
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #91b9f4;
-}
-
-#nextButton {
-  background-color: #3aab6b;
-  color: var(--text-color);
-  padding: 12px 20px;
-  margin: 0.2em;
-  border: none;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-#nextButton:hover {
-  background-color: #45ce81;
-}
-
-#prevButton {
-  background-color: #e74c3c;
-  color: var(--text-color);
-  padding: 12px 20px;
-  margin: 0.2em;
-  border: none;
-  border-radius: 4px;
-  color: white;
-  cursor: pointer;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-#prevButton:hover {
-  background-color: #e37669; 
-}
-
-#clearButton {
-  background-color: var(--accent-color); 
-  color: var(--text-color);
-  padding: 12px 20px;
-  margin: 0.2em;
-  border: none;
-  font-size: 1em;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-#clearButton:hover {
-  background-color: #efc074;
+  background-color: var(--accent-color); /* Unified hover effect using accent color */
 }
 
 @media screen and (max-width: 768px) {
-  body {
-    font-size: 1em;
+  .button-container button {
+    padding: 12px 20px; /* Increased padding for larger touch targets on mobile */
   }
 
-  select{
-    width: 100%;
-  }
-  
-  /* Prevent horizontal scrolling on the table container */
-  .table-container {
-    overflow-x: hidden; 
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+  .table-container, .button-container, .select2-container, select {
+    width: 100% !important; /* Ensuring full-width elements for better mobile responsiveness */
   }
 
-  /* Adjust the width of the Select2 dropdown list */
-  .select2-container--default .select2-dropdown {
-    font-size: 1.2em;
-  }
-
-  /* Adjust the minimum width of the Select2 dropdown and create space for the arrow */
-  .select2-container--default .select2-selection--single {
-    min-width: unset;
-    max-width: calc(100%);
-  }
-
-  /* Adjust the font size of the text inside the Select2 dropdown */
-  .select2-container--default .select2-selection--single .select2-selection__rendered {
-    font-size: 1.2em;
-  }
-  
-
-  #nextButton, #prevButton, #clearButton {
-    flex: 0 0 45%;
-  }
-
-  button {
-    padding: 10px 15px;
-  }
-
-  input[type="text"] {
-    width: 2em;
+ input[type="text"]{
+    width: 30% !important;
   }
 }
