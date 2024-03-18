@@ -70,6 +70,13 @@ var jsonData = {
                     "id": "teleSpeaker",
                     "buttons": "yes"
                 },
+                {
+                    "name": "Notes Shot From Center",
+                    "type": "field",
+                    "required": "no",
+                    "id": "telePass",
+                    "buttons": "yes"
+                },
             ]
         },
         {
