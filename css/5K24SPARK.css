@@ -1,21 +1,21 @@
 /* 
-    Author: Isabella Lapore, Josh Bakelaar
+    Author: Josh Bakelaar, Isabella Lapore
     Created Date: 2/25/2024
     Modified Date: 2/25/2024
 */
 
 /* Colors */
 :root {
-  --primary-color: dodgerblue; 
-  --secondary-color: #075bec; 
+  --primary-color: #f5f5f5; 
+  --secondary-color: #2980b9; 
   --accent-color: #f39c12; 
   --text-color: #333; 
-  --table-header-color: #075bec;
+  --table-header-color: #2980b9;
 }
 
 /* Base styles */
 body {
-  font-family: Arial, Helvetica, sans-serif; 
+  font-family: 'Roboto', sans-serif;
   background-color: var(--primary-color);
   color: var(--text-color);
   padding: 20px;
@@ -28,7 +28,7 @@ body {
 /* Centered heading */
 h2 {
   text-align: center;
-  color: white;
+  color: var(--secondary-color);
 }
 
 /* QR code container */
@@ -47,12 +47,11 @@ h2 {
 /* Banner */
 .banner {
   background-color: var(--secondary-color);
-  color: white;
+  color: var(--primary-color);
   text-align: center;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  text-shadow: 2px 2px 5px rgb(192, 179, 33);
 }
 
 .banner h1 {
@@ -67,7 +66,7 @@ h2 {
   overflow-x: auto;
   margin: 0 auto; 
   border-radius: 8px;
-  box-shadow: 12px 12px 12px rgb(225, 240, 12); /* Adjusted box-shadow for consistency */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Adjust the table width as needed */
@@ -83,8 +82,9 @@ th, td {
   text-align: center;
   padding: 8px;
   border-bottom: 1px solid #ddd;
-  color: #fff; /* Adjusted for contrast and readability */
+  color: #fff;
 }
+
 
 tr {
   height: 50px;
@@ -102,7 +102,7 @@ table:empty {
 select,
 input[type="text"] {
   height: 40px;
-  width: 30%; /* Adjusted for full-width on mobile devices */
+  width: 3em;
   font-size: 1.2em;
   padding: 6px;
   border: 1px solid #ccc;
@@ -114,6 +114,10 @@ input[type="text"] {
   font-size: 1.2em;
   vertical-align: middle;
   color: var(--accent-color);
+}
+
+select {
+  width: 10em;
 }
 
 html {
@@ -137,10 +141,9 @@ html {
 }
 
 input[type="checkbox"] {
-  transform: scale(1.5); /* Making checkboxes larger for better accessibility */
-  margin: 10px;
-  width: 2em;
-  height: 2em;
+  margin-bottom: 5px;
+  transform: scale(2.5);
+  cursor: pointer;
 }
 
 .checkbox-container label {
@@ -150,49 +153,125 @@ input[type="checkbox"] {
 
 /* Button container */
 .button-container {
+  overflow-x: hidden;
   display: flex;
   justify-content: center;
   margin: 20px auto;
   gap: 10px;
-  width: 100%;
+  width: calc(100% - 0px);
   max-width: 500px;
-}
-
-.select2-container{
-  width: 100% !important;
-}
-
-select{
-  width: 100%;
 }
 
 button {
   flex: 1;
-  background-color: #2a57ea;
-  color: white;
-  padding: 10px 15px; /* Adjusted padding for better touch interaction */
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  padding: 12px 20px;
   margin: 0.2em;
-  font-size: 1em; /* Adjusted font size for consistency */
-  border: none; /* Removed double border for a cleaner look */
-  border-radius: 4px; /* Added rounded corners for modern aesthetic */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Consistent shadow effect */
+  font-size: 1em;
+  color: white;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-  background-color: var(--accent-color); /* Unified hover effect using accent color */
+  background-color: #2e94d8;
+}
+
+#nextButton {
+  background-color: #3aab6b;
+  color: var(--text-color);
+  padding: 12px 20px;
+  margin: 0.2em;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#nextButton:hover {
+  background-color: #45ce81;
+}
+
+#prevButton {
+  background-color: #e74c3c;
+  color: var(--text-color);
+  padding: 12px 20px;
+  margin: 0.2em;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#prevButton:hover {
+  background-color: #e37669; 
+}
+
+#clearButton {
+  background-color: var(--accent-color); 
+  color: var(--text-color);
+  padding: 12px 20px;
+  margin: 0.2em;
+  border: none;
+  font-size: 1em;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#clearButton:hover {
+  background-color: #efc074;
 }
 
 @media screen and (max-width: 768px) {
-  .button-container button {
-    padding: 12px 20px; /* Increased padding for larger touch targets on mobile */
+  body {
+    font-size: 1em;
   }
 
-  .table-container, .button-container, .select2-container, select {
-    width: 100% !important; /* Ensuring full-width elements for better mobile responsiveness */
+  select{
+    width: 100%;
+  }
+  
+  /* Prevent horizontal scrolling on the table container */
+  .table-container {
+    overflow-x: hidden; 
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
- input[type="text"]{
-    width: 30% !important;
+  /* Adjust the width of the Select2 dropdown list */
+  .select2-container--default .select2-dropdown {
+    font-size: 1.2em;
+  }
+
+  /* Adjust the minimum width of the Select2 dropdown and create space for the arrow */
+  .select2-container--default .select2-selection--single {
+    min-width: unset;
+    max-width: calc(100%);
+  }
+
+  /* Adjust the font size of the text inside the Select2 dropdown */
+  .select2-container--default .select2-selection--single .select2-selection__rendered {
+    font-size: 1.2em;
+  }
+  
+
+  #nextButton, #prevButton, #clearButton {
+    flex: 0 0 45%;
+  }
+
+  button {
+    padding: 10px 15px;
+  }
+
+  input[type="text"] {
+    width: 2em;
   }
 }
