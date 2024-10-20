@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #f2f2f2;
+}
+
+.page-header {
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.sortable-list {
+    background: #fcfcfc;
+    width: 445px;
+    padding: 30px 25px 20px;
+    border-radius: 6px;
+    margin: 2%;
+}
+
+.sortable-list .item {
+    list-style: none;
+    display: flex;
+    background: #f5f5f5;
+    border-radius: 5px;
+    margin-bottom: 11px;
+    padding: 10px 13px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.item .details {
+    display: flex;
+    align-items: center;
+}
+
+.item .details {
+    width: 43px;
+    height: 43px;
+    margin-right: 12px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.item .details .span {
+    font-size: 1.13rem;
+}
+
+.item i {
+    color: #474747;
+    font-size: 1.13rem;
+}
+
+.item.dragging :where(.details, i) {
+    opacity: 0;
+}
+
+.sortable-list .item.first {
+    background: linear-gradient(to right, #ff80bf, #ffcc99, #ffff99, #ccff99, #80ffbf, #99ffff, #9999ff);
+}
+
+.sortable-list .item.second {
+    background: linear-gradient(135deg, #FFD700, #FFECB3);
+    box-shadow: inset 0 0 5px rgba(255, 215, 0, 0.5), inset 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.sortable-list .item.third {
+    background: linear-gradient(135deg, #C0C0C0, #E0E0E0);
+    box-shadow: inset 0 0 5px rgba(192, 192, 192, 0.5), inset 0 0 15px rgba(192, 192, 192, 0.3), 0 0 10px rgba(255,255,255,0.3);
+}
+
+.sortable-list .item.fourth {
+    background: linear-gradient(135deg, #CD7F32, #E7C1A3);
+    box-shadow: inset 0 0 5px rgba(205, 127, 50, 0.5), inset 0 0 15px rgba(205, 127, 50, 0.3);
+}
+
+.order-number {
+    margin-right: 10px;
+}
+
+.page-header {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    border-bottom: 1px solid #ddd;
+}
+
+.item a {
+    color: #242424; /* Change to the color you prefer */
+    text-decoration: none; /* Remove underline */
+}
+
+.item a:hover {
+    color: #777777; /* Change to the hover color you prefer */
+}
+
+.fixed-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Ensure it's above other elements */
+    background-color: #e75656;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* CSS for the crossed-out text */
+.crossed-out {
+    text-decoration: line-through; /* Add line-through decoration */
+    font-weight: 600; /* Make the line thicker */
+}
