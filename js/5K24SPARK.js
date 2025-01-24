@@ -6,6 +6,13 @@
  * Modified Date: 2/25/2024
  */
 
+let scoutingType = "matchScouting";
+
+function updateScoutingType(newType) {
+    scoutingType = newType;
+}
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const event = jsonData.event;
 
@@ -303,7 +310,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Function collectValues() gets all inputs
         function collectValues() {
             // Create empty string
-            collectedValues = "";
+            collectedValues = scoutingType + ", ";
             const inputs = document.querySelectorAll("input[type=text], input[type=checkbox], input[type=radio]:checked, select");
             inputs.forEach(input => {
                 // If the input is a checkbox and the input is checked put "Yes" for true and "No" for false
