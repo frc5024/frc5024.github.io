@@ -1,5 +1,5 @@
 Select
-Not in stage zone
+Not in barge zone
 Park
-On stage (Climb)
-Harmony (Double Climb)
+Shallow Climb (High Cage)
+Deep Climb (Low Cage)
