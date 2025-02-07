@@ -25,6 +25,16 @@ document.addEventListener("DOMContentLoaded", function () {
             uncheckedCheckbox.checked = false;
         }
     }
+    function changeTHColour(keyword, colour) {
+        const ths = document.querySelectorAll("th");
+        ths.forEach(th => {
+            if(th.textContent.includes(keyword)){
+                th.style.backgroundColor = colour;
+            }
+        });
+            
+    
+    }   
 
     // Function to create the "pages" within the 5K24Spark
     function createPages(jsonData) {
@@ -76,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         if(object.buttons === "yes"){
                             // Adds a minus button to the left hand side
                             const minusButton = document.createElement("button");
+                            minusButton.id = "minusButton";
                             minusButton.textContent = "-";
                             minusButton.addEventListener("click", () => decrementValue(object.id));
                             inputGroup.appendChild(minusButton);
@@ -94,6 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         if(object.buttons === "yes"){
                             // Create the plus button on the right hand side
                             const plusButton = document.createElement("button");
+                            plusButton.id = "plusButton";
                             plusButton.textContent = "+";
                             plusButton.addEventListener("click", () => incrementValue(object.id));
                             inputGroup.appendChild(plusButton);
@@ -115,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         const checkboxesGroupContainer = document.createElement("div");
                         checkboxesGroupContainer.className = "checkboxes-group-container";
 
-                        const labels = ["Yes", "No"];
+                        const labels = ["No", "Yes"];
                         labels.forEach(label => {
                             // Create individual container for each checkbox and its label
                             const checkboxContainer = document.createElement("div");
@@ -161,6 +173,9 @@ document.addEventListener("DOMContentLoaded", function () {
             // Add the table to the container
             container.appendChild(table);
             document.body.appendChild(container);
+            changeTHColour("Coral", "#F17829");
+            changeTHColour("Algae", "#0DAD8D");
+            
         }
 
         // Function to increment a value in a text field
