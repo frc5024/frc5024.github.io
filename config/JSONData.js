@@ -84,6 +84,12 @@ var jsonData = {
             "name": "Tele-Op",
             "fields": [
                 {
+                    "name": "Crossed Barge",
+                    "type": "checkbox",
+                    "id":"4",
+                    "required": "yes"
+                }, 
+                {
                     "name": "Coral L4",
                     "type": "field",
                     "required": "no",
@@ -125,12 +131,6 @@ var jsonData = {
                     "id": "teleNet",
                     "buttons": "yes"
                 },
-                {
-                    "name": "Crossed Barge",
-                    "type": "checkbox",
-                    "id":"4",
-                    "required": "yes"
-                },  
             ]
         },
         {
