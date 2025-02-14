@@ -36,7 +36,7 @@ var jsonData = {
                     "name": "Rank 2",
                     "type": "select",
                     "required": "yes",
-                    "id": "select",
+                    "id": "rank2",
                     "file": "config/teams.txt"
                 },
                 {
