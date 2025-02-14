@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         checkboxesGroupContainer.className = "checkboxes-group-container";
                         
                         // CHANGE THIS TO NO, YES RATHER THAN YES NO
-                        const labels = ["Yes", "No"];
+                        const labels = ["No", "Yes"];
                         labels.forEach(label => {
                             // Create individual container for each checkbox and its label
                             const checkboxContainer = document.createElement("div");
