@@ -12,7 +12,6 @@ function updateScoutingType(newType) {
     scoutingType = newType;
 }
 
-
 document.addEventListener("DOMContentLoaded", function () {
     const event = jsonData.event;
 
@@ -25,16 +24,17 @@ document.addEventListener("DOMContentLoaded", function () {
             uncheckedCheckbox.checked = false;
         }
     }
+
     function changeTHColour(keyword, colour) {
-        const ths = document.querySelectorAll("th");
-        ths.forEach(th => {
-            if(th.textContent.includes(keyword)){
-                th.style.backgroundColor = colour;
+        // Select all table headers
+        const tableHeaders = document.querySelectorAll("th");
+    
+        tableHeaders.forEach(header => {
+            if (header.textContent.includes(keyword)) {
+                header.style.backgroundColor = colour; // Change to any background color you prefer
             }
         });
-            
-    
-    }   
+    }
 
     // Function to create the "pages" within the 5K24Spark
     function createPages(jsonData) {
@@ -86,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         if(object.buttons === "yes"){
                             // Adds a minus button to the left hand side
                             const minusButton = document.createElement("button");
+                            
                             minusButton.id = "minusButton";
                             minusButton.textContent = "-";
                             minusButton.addEventListener("click", () => decrementValue(object.id));
@@ -126,8 +127,9 @@ document.addEventListener("DOMContentLoaded", function () {
                         // Create a container for grouping checkboxes side by side
                         const checkboxesGroupContainer = document.createElement("div");
                         checkboxesGroupContainer.className = "checkboxes-group-container";
-
-                        const labels = ["No", "Yes"];
+                        
+                        // CHANGE THIS TO NO, YES RATHER THAN YES NO
+                        const labels = ["Yes", "No"];
                         labels.forEach(label => {
                             // Create individual container for each checkbox and its label
                             const checkboxContainer = document.createElement("div");
@@ -175,7 +177,6 @@ document.addEventListener("DOMContentLoaded", function () {
             document.body.appendChild(container);
             changeTHColour("Coral", "#F17829");
             changeTHColour("Algae", "#0DAD8D");
-            
         }
 
         // Function to increment a value in a text field

@@ -178,6 +178,17 @@ input[type="checkbox"] {
   background-color: #e37669; 
 }
 
+#pairwise {
+  background-color:#2980b9;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
+#pairwise:hover {
+  background-color: #2f8dcd; 
+}
+
 button {
   flex: 1;
   color: var(--text-color);
@@ -288,7 +299,18 @@ button:hover {
   background-color: #efc074;
 }
 
+
 @media screen and (max-width: 768px) {
+  th, td {
+    text-align: center;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-bottom: 1px solid #ddd;
+    color: #fff;
+  }
+
   body {
     font-size: 1em;
   }
