@@ -362,7 +362,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
 
                 // For the teams and names select make a select2
-                if (elementId === "teams" || elementId === "names") {
+                if (elementId === "teams" || elementId === "names" || elementId === "rank1" || elementId === "rank2" || elementId === "rank3") {
                     $("#" + elementId).select2();
                 }
             })
