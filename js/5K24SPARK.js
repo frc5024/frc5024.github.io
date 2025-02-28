@@ -14,6 +14,7 @@ function updateScoutingType(newType) {
 
 document.addEventListener("DOMContentLoaded", function () {
     const event = jsonData.event;
+    let matchNumber = "";
 
     // Function for checkbox updating, making it so only one (true or false) can be selected
     function updateCheckbox(checkedId, uncheckedId) {
@@ -47,10 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Function which creates the table too act as the "page"
         function createTable(page) {
-            // If the name of the page is title "QRCode" do not create a table
-            if(page.name === "QRCode"){
-                return;
-            }
+            const matchNum = document.createElement("h3")
             // Get the data to be put on the page
             const pageData = page.fields;
             // Create a div for the table
@@ -172,6 +170,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 table.appendChild(row);
             });
 
+            // If the name of the page is title "QRCode" do not create a table
+            if (page.name === "QRCode") {
+                return;
+            }
+
             // Add the table to the container
             container.appendChild(table);
             document.body.appendChild(container);
@@ -203,7 +206,7 @@ document.addEventListener("DOMContentLoaded", function () {
             inputs.forEach(input => {
                 // Reset text inputs to "0"
                 if (input.type === 'text') {
-                    if(input.id === 'match#'){
+                    if(input.id === 'matchNum'){
                         const matchNum = +input.value;
                         input.value = matchNum+1;
                         
@@ -215,7 +218,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     input.checked = false;
                 // Reset the selects back to "Select", unless it is the name, then leave it
                 } else if (input.tagName.toLowerCase() === 'select') {
-                    if (input.id !== 'names') {
+                    if (input.id !== 'names' && input.id !== 'alliance') {
                         const firstOptionValue = $(input).find('option:first').val();
                         $(input).val(firstOptionValue).trigger('change.select2');;
                     }
@@ -245,7 +248,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (object.type === "select" && ($("#" + object.id).val() || "").trim().toLowerCase() === "select") {
                         alert("Please fill the required field before moving to the next page.");
                         return false;
-                    } else if (object.type === "field" && !$("#match\\#").val()) {
+                    } else if (object.type === "field" && !$("#matchNum").val()) {
                         alert("Please fill the required field before moving to the next page.");
                         return false;
                     } else if (object.type === "checkbox" && !document.getElementById(`checkboxYes${object.id}`).checked && !document.getElementById(`checkboxNo${object.id}`).checked) {
@@ -273,7 +276,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const currentPage = pages[currentPageIndex];
             const currentTable = document.getElementById(currentPage.name + "Table");
 
-            // Make sure the previous button is not shown on first page
+            // Make sure the previous button is not shown on the first page
             const prevButton = document.getElementById("prevButton");
             if (prevButton) {
                 prevButton.style.display = currentPageIndex === 0 ? "none" : "";
@@ -287,22 +290,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Make sure the new math button is not shown until the last page
             const restartButton = document.getElementById("clearButton");
-            if (restartButton){
+            if (restartButton) {
                 restartButton.style.display = currentPageIndex === pages.length - 1 ? "" : "none";
+            }
+
+            // Make sure the pairwise button is only shown on the first page
+            const pairwise = document.getElementById("pairwise");
+            if (pairwise) {
+                pairwise.style.display = currentPageIndex === 0 ? "" : "none";
             }
 
             // Make sure the QRcode is only shown on the last page
             const qrCodeDiv = document.getElementById("qrcode");
-            if (qrCodeDiv) {
-                qrCodeDiv.style.display = currentPageIndex === pages.length - 1 ? "" : "none";
-            }
+            let qrHeading = document.getElementById("qrHeading");
 
             // Set display "" for current table
             if (currentTable) {
                 currentTable.style.display = "";
             }
-            
-            // If the pages name is "QRCode", call collectvalues() and create the qrcdoe
+
+            // If the page name is "QRCode", call collectValues() and create the QR code
             if (currentPage.name === "QRCode") {
                 collectValues();
                 const qrcodeElement = document.getElementById("qrcode");
@@ -314,6 +321,26 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
 
+            // Only create the heading if it's the last page
+            if (currentPageIndex === pages.length - 1) {
+                // If the heading doesn't exist, create it
+                if (!qrHeading) {
+                    qrHeading = document.createElement("h3");
+                    qrHeading.id = "qrHeading";  // Set an ID for easy access later
+                    qrHeading.textContent = "Match " + matchNumber;
+                    qrCodeDiv.parentNode.insertBefore(qrHeading, qrCodeDiv);
+                }
+                // Show QR code and heading
+                qrCodeDiv.style.display = "";
+                qrHeading.style.display = "";
+            } else {
+                // Remove the heading if it's not the last page
+                if (qrHeading) {
+                    qrHeading.remove();
+                }
+                qrCodeDiv.style.display = "none";
+            }
+
             // Show the title of the page
             const headingElement = document.getElementById("heading");
             if (headingElement) {
@@ -321,14 +348,15 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
 
-        
-
         // Function collectValues() gets all inputs
         function collectValues() {
             // Create empty string
             collectedValues = scoutingType + ", ";
             const inputs = document.querySelectorAll("input[type=text], input[type=checkbox], input[type=radio]:checked, select");
             inputs.forEach(input => {
+                if (input.id === "matchNum"){
+                    matchNumber = input.value.trim();
+                }
                 // If the input is a checkbox and the input is checked put "Yes" for true and "No" for false
                 if (input.type === "checkbox" && input.checked) {
                     const checkboxId = input.id;

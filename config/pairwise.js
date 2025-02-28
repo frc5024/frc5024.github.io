@@ -14,7 +14,7 @@ var jsonData = {
                 {
                     "name": "Match #",
                     "type": "field",
-                    "id": "match#",
+                    "id": "matchNum",
                     "required": "yes",
                     "buttons": "no"
                 },
