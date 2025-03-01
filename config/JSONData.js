@@ -149,6 +149,13 @@ var jsonData = {
             "name": "Other",
             "fields": [
                 {
+                    "name": "Defense Capability",
+                    "type": "select",
+                    "required": "yes",
+                    "id": "defense",
+                    "file": "config/defense.txt"
+                },
+                {
                     "name": "Robot Died",
                     "type": "checkbox",
                     "id":"5",
