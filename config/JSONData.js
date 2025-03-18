@@ -149,20 +149,19 @@ var jsonData = {
             "name": "Other",
             "fields": [
                 {
-                    "name": "Defense Capability",
-                    "type": "select",
-                    "required": "yes",
-                    "id": "defense",
-                    "file": "config/defense.txt"
-                },
-                {
-                    "name": "Robot Died",
+                    "name": "Removed Algae",
                     "type": "checkbox",
                     "id":"5",
                     "required": "yes"
                 },
                 {
-                    "name": "Robot Tipped",
+                    "name": "Played Defense",
+                    "type": "checkbox",
+                    "id": "defense",
+                    "required": "yes"   
+                },
+                {
+                    "name": "Robot Died",
                     "type": "checkbox",
                     "id":"6",
                     "required": "yes"
