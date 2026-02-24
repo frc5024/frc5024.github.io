@@ -1,5 +1,5 @@
 Select
-Not in barge zone
-Park
-Shallow Climb (High Cage)
-Deep Climb (Low Cage)
+Did Not Climb
+Level 1
+Level 2
+Level 3

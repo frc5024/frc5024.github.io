@@ -114,11 +114,38 @@ document.addEventListener("DOMContentLoaded", function () {
                         break;
                     // If the object is a radio button create one
                     case "radio":
-                        for (let i = 0; i < object.count; i++) {
+                        // Create a container for grouping radio buttons
+                        const radioGroupContainer = document.createElement("div");
+                        radioGroupContainer.className = "radio-group-container";
+                        
+                        // Use options array if provided, otherwise use count
+                        const radioOptions = object.options || [];
+                        radioOptions.forEach((option, index) => {
+                            // Create individual container for each radio button and its label
+                            const radioContainer = document.createElement("div");
+                            radioContainer.className = "radio-container";
+                            
+                            // Create radio button
                             const radio = document.createElement("input");
                             radio.type = "radio";
-                            inputCell.appendChild(radio);
-                        }
+                            radio.name = object.id;
+                            radio.id = `radio${option}${object.id}`;
+                            radio.value = option;
+
+                            // Create label
+                            const labelElement = document.createElement("label");
+                            labelElement.htmlFor = radio.id;
+                            labelElement.textContent = option;
+
+                            // Append radio and label to their individual container
+                            radioContainer.appendChild(radio);
+                            radioContainer.appendChild(labelElement);
+
+                            // Append the individual container to the parent group container
+                            radioGroupContainer.appendChild(radioContainer);
+                        });
+                        // Append the parent group container to inputCell
+                        inputCell.appendChild(radioGroupContainer);
                         break;
                     // If the object is a checkbox create on
                     case "checkbox":
@@ -254,6 +281,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     } else if (object.type === "checkbox" && !document.getElementById(`checkboxYes${object.id}`).checked && !document.getElementById(`checkboxNo${object.id}`).checked) {
                         alert("Please fill the required field before moving to the next page.");
                         return false;
+                    } else if (object.type === "radio") {
+                        const radioButtons = document.querySelectorAll(`input[name="${object.id}"]`);
+                        const isChecked = Array.from(radioButtons).some(radio => radio.checked);
+                        if (!isChecked) {
+                            alert("Please fill the required field before moving to the next page.");
+                            return false;
+                        }
                     }
                 }
             }
@@ -361,6 +395,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (input.type === "checkbox" && input.checked) {
                     const checkboxId = input.id;
                     collectedValues += checkboxId.includes("No") ? "No, " : "Yes, ";
+                // If the input is a radio button and checked, add its value
+                } else if (input.type === "radio" && input.checked) {
+                    collectedValues += input.value + ", ";
                 // Put value from select or text
                 } else if ((input.type === "text" || input.tagName.toLowerCase() === "select") && input.value.trim() !== "") {
                     collectedValues += input.value + ", ";

@@ -31,113 +31,48 @@ var jsonData = {
             "name": "auto",
             "fields": [
                 {
-                    "name": "Left Starting Line",
+                    "name": "Climb",
                     "type": "checkbox",
                     "id":"2",
                     "required": "yes"
                 },
                 {
-                    "name": "Coral L4",
-                    "type": "field",
-                    "required": "no",
-                    "id": "autoL4",
-                    "buttons": "yes"
+                    "name": "Score Preloaded Fuel",
+                    "type": "checkbox",
+                    "required": "yes",
+                    "id": "3",
                 },
                 {
-                    "name": "Coral L3",
-                    "type": "field",
-                    "required": "no",
-                    "id": "autoL3",
-                    "buttons": "yes"
+                    "name": "Picked Up Fuel in Nuetral Zone",
+                    "type": "checkbox",
+                    "required": "yes",
+                    "id": "3",
                 },
                 {
-                    "name": "Coral L2",
-                    "type": "field",
-                    "required": "no",
-                    "id": "autoL2",
-                    "buttons": "yes"
+                    "name": "Picked Up Fueld in Alliance Zone",
+                    "type": "checkbox",
+                    "required": "yes",
+                    "id": "3",
                 },
-                {
-                    "name": "Coral L1",
-                    "type": "field",
-                    "required": "no",
-                    "id": "autoL1",
-                    "buttons": "yes"
-                },
-                {
-                    "name": "Algae Processor",
-                    "type": "field",
-                    "required": "no",
-                    "id": "autoProcessor",
-                    "buttons": "yes"
-                },
-                {
-                    "name": "Algae Net",
-                    "type": "field",
-                    "required": "no",
-                    "id": "autoNet",
-                    "buttons": "yes"
-                },    
             ]
         },
         {
             "name": "Tele-Op",
             "fields": [
                 {
-                    "name": "Crossed Barge",
-                    "type": "checkbox",
+                    "name": "Fuel Scored",
+                    "type": "radio",
                     "id":"4",
-                    "required": "yes"
-                }, 
-                {
-                    "name": "Coral L4",
-                    "type": "field",
-                    "required": "no",
-                    "id": "teleL4",
-                    "buttons": "yes"
-                },
-                {
-                    "name": "Coral L3",
-                    "type": "field",
-                    "required": "no",
-                    "id": "teleL3",
-                    "buttons": "yes"
-                },
-                {
-                    "name": "Coral L2",
-                    "type": "field",
-                    "required": "no",
-                    "id": "teleL2",
-                    "buttons": "yes"
-                },
-                {
-                    "name": "Coral L1",
-                    "type": "field",
-                    "required": "no",
-                    "id": "teleL1",
-                    "buttons": "yes"
-                },
-                {
-                    "name": "Algae Processor",
-                    "type": "field",
-                    "required": "no",
-                    "id": "teleProcessor",
-                    "buttons": "yes"
-                },
-                {
-                    "name": "Algae Net",
-                    "type": "field",
-                    "required": "no",
-                    "id": "teleNet",
-                    "buttons": "yes"
-                },
+                    "required": "yes",
+                    "options": ["<10", "10-50", "50-100", "100-200", "200+"]
+                }
             ]
         },
         {
             "name": "End Game",
             "fields": [
                 {
-                    "name": "End game status",
+                    "name": "Climb Level",
                     "type": "select",
                     "required": "yes",
                     "id": "endgame",
@@ -149,27 +84,34 @@ var jsonData = {
             "name": "Other",
             "fields": [
                 {
-                    "name": "Removed Algae",
+                    "name": "Went Under Trench",
                     "type": "checkbox",
                     "id":"5",
                     "required": "yes"
                 },
                 {
-                    "name": "Played Defense",
-                    "type": "checkbox",
-                    "id": "defense",
-                    "required": "yes"   
-                },
-                {
-                    "name": "Robot Died",
+                    "name": "Went Over Bump",
                     "type": "checkbox",
                     "id":"6",
                     "required": "yes"
                 },
                 {
+                    "name": "Driver Ability",
+                    "type": "select",
+                    "required": "yes",
+                    "id": "driver",
+                    "file": "config/driver.txt"
+                },
+                {
+                    "name": "Robot Died",
+                    "type": "checkbox",
+                    "id":"8",
+                    "required": "yes"
+                },
+                {
                     "name": "Did Not Play",
                     "type": "checkbox",
-                    "id":"7",
+                    "id":"9",
                     "required": "yes"
                 },
             ]
