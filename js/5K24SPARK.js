@@ -467,14 +467,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 currentPageIndex--;
             }
 
-            if (currentPageIndex == 1){
-                document.body.style.backgroundColor = "#fcedfc";
-            }else if (currentPageIndex == 2){
-                document.body.style.backgroundColor = "#FFFFC5";
-            }else {
-                document.body.style.backgroundColor = "#F5F5F5";
-            }
-            // Show current table
+            // if (currentPageIndex == 1){
+            //     document.body.style.backgroundColor = "#fcedfc";
+            // }else if (currentPageIndex == 2){
+            //     document.body.style.backgroundColor = "#FFFFC5";
+            // }else {
+            //     document.body.style.backgroundColor = "#F5F5F5";
+            // }
+            // // Show current table
             showCurrentTable();
         });
 
@@ -492,13 +492,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     currentPageIndex++;
                 }
                 // Show current table
-                if (currentPageIndex == 1){
-                    document.body.style.backgroundColor = "#FCE5FC";
-                }else if (currentPageIndex == 2){
-                    document.body.style.backgroundColor = "#FFFFC5";
-                }else {
-                    document.body.style.backgroundColor = "#F5F5F5";
-                }
+                // if (currentPageIndex == 1){
+                //     document.body.style.backgroundColor = "#FCE5FC";
+                // }else if (currentPageIndex == 2){
+                //     document.body.style.backgroundColor = "#FFFFC5";
+                // }else {
+                //     document.body.style.backgroundColor = "#F5F5F5";
+                // }
                 showCurrentTable();
             }
         });
