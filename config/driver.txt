@@ -1,6 +1,6 @@
 Select
-1
+1 (Poor)
 2
 3
 4
-5
+5 (Excellent)
