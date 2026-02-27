@@ -43,13 +43,13 @@ var jsonData = {
                     "id": "3",
                 },
                 {
-                    "name": "Picked Up Fuel in Nuetral Zone",
+                    "name": "Picked Up Fuel in Neutral Zone",
                     "type": "checkbox",
                     "required": "yes",
                     "id": "3",
                 },
                 {
-                    "name": "Picked Up Fueld in Alliance Zone",
+                    "name": "Picked Up Fuel in Alliance Zone",
                     "type": "checkbox",
                     "required": "yes",
                     "id": "3",
