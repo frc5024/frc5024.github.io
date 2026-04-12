@@ -37,10 +37,11 @@ var jsonData = {
                     "required": "yes"
                 },
                 {
-                    "name": "Score Preloaded Fuel",
-                    "type": "checkbox",
+                    "name": "Fuel Scored",
+                    "type": "select",
                     "required": "yes",
                     "id": "3",
+                    "file":"config/auto.txt"
                 },
                 {
                     "name": "Picked Up Fuel in Neutral Zone",
